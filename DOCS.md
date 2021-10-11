@@ -37,3 +37,13 @@ Este widget é útil quando você tem uma única caixa que normalmente estará t
 Também é útil se você precisar encolher em ambos os eixos (a direção de rolagem principal, bem como o eixo cruzado), como pode ser visto em uma caixa de diálogo ou menu pop-up. Nesse caso, você pode emparelhar SingleChildScrollView com um filho ListBody.
 
 Quando você tem uma lista de filhos e não exige um comportamento de encolhimento de eixo cruzado, por exemplo, uma lista de rolagem que sempre tem a largura da tela, considere ListView, que é muito mais eficiente que um SingleChildScrollView contendo um ListBody ou Column com muitos filhos.
+
+## Stateful
+
+Um widget que possui estado mutável.
+
+Estado é a informação que (1) pode ser lida de forma síncrona quando o widget é construído e (2) pode mudar durante o tempo de vida do widget. É responsabilidade do implementador do widget garantir que o Estado seja imediatamente notificado quando tal estado for alterado, usando State.setState.
+
+Um widget stateful é um widget que descreve parte da interface do usuário, construindo uma constelação de outros widgets que descrevem a interface do usuário de forma mais concreta. O processo de construção continua recursivamente até que a descrição da interface do usuário seja totalmente concreta (por exemplo, consiste inteiramente em RenderObjectWidgets, que descreve RenderObjects concretos).
+
+Widgets com estado são úteis quando a parte da interface do usuário que você está descrevendo pode mudar dinamicamente, por exemplo, devido a ter um estado controlado por relógio interno ou dependendo de algum estado do sistema. Para composições que dependem apenas das informações de configuração no próprio objeto e no BuildContext no qual o widget está inflado, considere o uso de StatelessWidget.
