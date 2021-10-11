@@ -63,3 +63,9 @@ Uma área retangular de um material que responde ao toque.
 Para obter uma variante deste widget que não corta respingos, consulte InkResponse.
 
 O diagrama a seguir mostra a aparência de um InkWell quando tocado, ao usar os valores padrão.
+
+## Fechar ABD devices
+
+```sh
+adb kill-server
+```
