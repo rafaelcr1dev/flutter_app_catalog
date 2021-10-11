@@ -47,3 +47,19 @@ Estado é a informação que (1) pode ser lida de forma síncrona quando o widge
 Um widget stateful é um widget que descreve parte da interface do usuário, construindo uma constelação de outros widgets que descrevem a interface do usuário de forma mais concreta. O processo de construção continua recursivamente até que a descrição da interface do usuário seja totalmente concreta (por exemplo, consiste inteiramente em RenderObjectWidgets, que descreve RenderObjects concretos).
 
 Widgets com estado são úteis quando a parte da interface do usuário que você está descrevendo pode mudar dinamicamente, por exemplo, devido a ter um estado controlado por relógio interno ou dependendo de algum estado do sistema. Para composições que dependem apenas das informações de configuração no próprio objeto e no BuildContext no qual o widget está inflado, considere o uso de StatelessWidget.
+
+## AnimatedContainer
+
+Versão animada do Container que muda gradualmente seus valores ao longo do tempo.
+
+O AnimatedContainer animará automaticamente entre os valores antigos e novos das propriedades quando eles mudam usando a curva e a duração fornecidas. As propriedades nulas não são animadas. Seu filho e descendentes não são animados.
+
+Esta classe é útil para gerar transições implícitas simples entre diferentes parâmetros para Container com seu AnimationController interno. Para animações mais complexas, você provavelmente desejará usar uma subclasse de AnimatedWidget, como DecoratedBoxTransition, ou usar seu próprio AnimationController.
+
+## InkWell class
+
+Uma área retangular de um material que responde ao toque.
+
+Para obter uma variante deste widget que não corta respingos, consulte InkResponse.
+
+O diagrama a seguir mostra a aparência de um InkWell quando tocado, ao usar os valores padrão.
