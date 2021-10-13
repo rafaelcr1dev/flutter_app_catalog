@@ -75,3 +75,29 @@ adb kill-server
 Durante o desenvolvimento, use uma declaração assert para interromper a execução normal se uma condição for falsa.
 
 A instrução assert garante por exemplo, a manipulação de valores nulos durante o desenvolvimento, evitando possíveis erros em tempo de execução.
+
+## Cookbook
+
+https://flutter.dev/docs/cookbook
+
+## GridView
+
+O Flutter tinha que ter um componente para exibir uma lista em duas dimensões no formato de uma grade. Este componente é o widget GridView.
+
+O widget GridView é um array bidimensional de widgets roláveis cuja direção do eixo principal do grid é a direção na qual ela rola (o scrollDirection).
+
+Os layouts de grade mais comumente usados ​​são GridView.count, que cria um layout com um número fixo de blocos no eixo transversal e GridView.extent, que cria um layout com blocos que têm uma extensão máxima de eixo cruzado. (Veja a documentação aqui: https://api.flutter.dev/flutter/widgets/GridView-class.html)
+
+A maneira mais simples de começar a usar grades é usando o construtor GridView.count, que permite especificar quantas linhas ou colunas gostaríamos de exibir.
+
+No exemplo a seguir, tirado da documentação do Flutter, vamos gerar uma lista de 100 widgets que exibem seu índice na lista. Isso vai ajudar a visualizar como o GridView funciona.
+
+Para isso vamos usar o construtor GridView.Count onde definimos o parâmetro crossAxisCount com valor 2 o que vai criar duas colunas (pois estamos usando o scrollDirection na vertical)
+
+A seguir estamos usando um recurso do DART que fornece um método utilitário para manipular a geração de valor para a estrutura de dados List - List.generate -  já que gerar ou fazer dados simulados é uma tarefa bastante comum.
+
+#### GridTile
+
+Um ladrilho em uma lista de grade do material design.
+
+Uma lista de grade é um GridView de blocos em uma matriz vertical e horizontal. Cada bloco normalmente contém algum conteúdo visualmente rico (por exemplo, uma imagem) junto com um GridTileBar em um cabeçalho ou rodapé.
