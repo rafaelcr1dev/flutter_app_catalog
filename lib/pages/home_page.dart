@@ -1,7 +1,11 @@
+import 'package:app_catalog/models/catalog.dart';
 import 'package:app_catalog/widgets/drawer.dart';
+import 'package:app_catalog/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  final int days = 30;
+  final String name = "Codepur";
   @override
   Widget build(BuildContext context) {
     int days = 30;
@@ -13,6 +17,7 @@ class HomePage extends StatelessWidget {
     // var day = "Tuesday";
     // const pi = 3.14;
     // final String week = 1;
+    final dummyList = List.generate(50, (index) => CatalogModel.items[0]);
 
     return Scaffold(
       appBar: AppBar(
@@ -26,10 +31,18 @@ class HomePage extends StatelessWidget {
           //   ),
         ),
       ),
-      body: Container(
-        height: 100,
-        width: 100,
-        color: Colors.green,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          //itemCount: CatalogModel.items.length,
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              //item: CatalogModel.items[index],
+              item: dummyList[index],
+            );
+          },
+        ),
       ),
       drawer: MyDrawer(),
     );

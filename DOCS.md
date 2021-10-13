@@ -69,3 +69,9 @@ O diagrama a seguir mostra a aparência de um InkWell quando tocado, ao usar os 
 ```sh
 adb kill-server
 ```
+
+## Asserts
+
+Durante o desenvolvimento, use uma declaração assert para interromper a execução normal se uma condição for falsa.
+
+A instrução assert garante por exemplo, a manipulação de valores nulos durante o desenvolvimento, evitando possíveis erros em tempo de execução.
