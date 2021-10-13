@@ -25,9 +25,14 @@ class _HomePageState extends State<HomePage> {
   loadData() async {
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
-    final decodeData = jsonDecode(catalogJson);
+    final decodedData = jsonDecode(catalogJson);
     var productsData = decodedData["products"];
-    print(productsData);
+
+    CatalogModel.items = List.from(productsData)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+
+    setState(() {});
   }
 
   @override
@@ -41,7 +46,7 @@ class _HomePageState extends State<HomePage> {
     // var day = "Tuesday";
     // const pi = 3.14;
     // final String week = 1;
-    final dummyList = List.generate(50, (index) => CatalogModel.items[0]);
+    // final dummyList = List.generate(50, (index) => CatalogModel.items[0]);
 
     return Scaffold(
       appBar: AppBar(
@@ -59,11 +64,11 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
           //itemCount: CatalogModel.items.length,
-          itemCount: dummyList.length,
+          itemCount: CatalogModel.items.length,
           itemBuilder: (context, index) {
             return ItemWidget(
               //item: CatalogModel.items[index],
-              item: dummyList[index],
+              item: CatalogModel.items[index],
             );
           },
         ),
