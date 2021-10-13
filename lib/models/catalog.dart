@@ -11,12 +11,10 @@ class Item {
 
 final products = [
   Item(
-    id: "001",
-    name: "IPhone 12 Pro",
-    desc: "Apple iPhone 12th generation",
-    price: 999,
-    color: "#33505a",
-    image: 
-      "https://i.pravatar.cc/150?img=3"
-  )
-]
+      id: "001",
+      name: "IPhone 12 Pro",
+      desc: "Apple iPhone 12th generation",
+      price: 999,
+      color: "#33505a",
+      image: "https://i.pravatar.cc/150?img=3")
+];
