@@ -1,3 +1,4 @@
+import 'package:app_catalog/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -26,6 +27,9 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.homeRoute);
+              },
               leading: Icon(
                 Icons.home,
                 color: Colors.white,
@@ -39,6 +43,9 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.loginRoute);
+              },
               leading: Icon(
                 Icons.person,
                 color: Colors.white,
@@ -52,12 +59,15 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.catalogRoute);
+              },
               leading: Icon(
                 Icons.email,
                 color: Colors.white,
               ),
               title: Text(
-                "Email",
+                "Catalog",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,
