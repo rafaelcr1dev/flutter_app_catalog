@@ -101,3 +101,23 @@ A seguir estamos usando um recurso do DART que fornece um método utilitário pa
 Um ladrilho em uma lista de grade do material design.
 
 Uma lista de grade é um GridView de blocos em uma matriz vertical e horizontal. Cada bloco normalmente contém algum conteúdo visualmente rico (por exemplo, uma imagem) junto com um GridTileBar em um cabeçalho ou rodapé.
+
+## Hero Animation
+
+Você provavelmente já viu animações de heróis muitas vezes. Por exemplo, uma tela exibe uma lista de miniaturas que representam os itens à venda. Selecionar um item o leva para uma nova tela, contendo mais detalhes e um botão “Comprar”. Voar uma imagem de uma tela para outra é chamado de animação de herói no Flutter, embora o mesmo movimento às vezes seja referido como uma transição de elemento compartilhado.
+
+## MaterialPageRoute
+
+Uma rota modal que substitui a tela inteira por uma transição adaptável à plataforma.
+
+Para Android, a transição de entrada para a página desliza a rota para cima e aumenta gradualmente. A transição de saída é a mesma, mas ao contrário.
+
+A transição é adaptável à plataforma e no iOS, a rota desliza para dentro da direita e sai ao contrário. A rota também muda para a esquerda em paralaxe quando outra página entra para cobri-la. (Essas direções são invertidas em ambientes com uma direção de leitura da direita para a esquerda.)
+
+Por padrão, quando uma rota modal é substituída por outra, a rota anterior permanece na memória. Para liberar todos os recursos quando isso não for necessário, defina keepState como false.
+
+A propriedade fullscreenDialog especifica se a rota de entrada é uma caixa de diálogo modal em tela cheia. No iOS, essas rotas são animadas de baixo para cima, em vez de horizontalmente.
+
+O tipo T especifica o tipo de retorno da rota que pode ser fornecido conforme a rota é retirada da pilha via Navigator.pop, fornecendo o argumento de resultado opcional.
+
+## Arc
