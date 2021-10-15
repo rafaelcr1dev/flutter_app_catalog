@@ -1,5 +1,4 @@
 import 'package:app_catalog/models/catalog.dart';
-import 'package:app_catalog/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -24,18 +23,7 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: Vx.mH8,
           children: [
             "\$${catalog.price}".text.bold.xl4.green800.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  context.theme.buttonColor,
-                ),
-                shape: MaterialStateProperty.all(
-                  StadiumBorder(),
-                ),
-              ),
-              child: "Add to cart".text.make(),
-            ).wh(120, 50),
+            _AddToCart().wh(120, 50),
           ],
         ).p16(),
       ),
@@ -81,6 +69,38 @@ class HomeDetailPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _AddToCart extends StatefulWidget {
+  const _AddToCart({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  __AddToCartState createState() => __AddToCartState();
+}
+
+class __AddToCartState extends State<_AddToCart> {
+  bool isAdded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        isAdded = isAdded.toggle();
+        setState(() {});
+      },
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          context.theme.buttonColor,
+        ),
+        shape: MaterialStateProperty.all(
+          StadiumBorder(),
+        ),
+      ),
+      child: isAdded ? Icon(Icons.done) : "Add to cart".text.make(),
     );
   }
 }
